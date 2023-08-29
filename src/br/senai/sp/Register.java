@@ -21,9 +21,6 @@ public class Register {
         /** Cria variavel para laco de repeticao */
         Boolean repete = true;
 
-        /** Instancia Register */
-        Register register = new Register();
-
         /** Laco de repeticao que permite escolha do usuario */
         while (repete) {
             System.out.println("\n-------------------------------------------------------");
@@ -32,16 +29,17 @@ public class Register {
             int escolha = teclado.nextInt();
             System.out.println("-------------------------------------------------------");
 
+            /** Define execucao de acordo com a escolha do usuario */
             switch (escolha) {
                 case 1:
-                    register.RegisterProf();
+                    RegisterProf();
                     break;
                 case 2:
-                    register.RegisterAluno();
+                    RegisterAluno();
                     break;
                 case 3:
-                    register.RegisterProf();
-                    register.RegisterAluno();
+                    RegisterProf();
+                    RegisterAluno();
                     break;
                 case 4:
                     repete = false;

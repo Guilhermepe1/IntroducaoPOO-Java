@@ -1,3 +1,9 @@
+/**
+ * Introdução a Programação Orientada a Objetos
+ * Autor: Guilherme Pereira
+ * Data: 29/08/2023
+ * */
+
 package br.senai.sp;
 
 import br.senai.sp.Model.Output;
