@@ -1,20 +1,20 @@
 package br.senai.sp;
 
+import br.senai.sp.Model.Input;
 import br.senai.sp.Model.Output;
 
 import java.util.Scanner;
 
 public class Register {
 
-    /** Instancia Scanner */
-    Scanner teclado = new Scanner(System.in);
     /** Instancia Professor */
     Professor objProfessor = new Professor();
     /** Instancia Aluno */
     Aluno objAluno = new Aluno();
     /** Instancia Output */
     Output outuput = new Output();
-
+    /** Instancia Input */
+    Input recebe = new Input();
 
     public void Registra() {
 
@@ -23,14 +23,10 @@ public class Register {
 
         /** Laco de repeticao que permite escolha do usuario */
         while (repete) {
-            System.out.println("\n-------------------------------------------------------");
-            System.out.println("Escolha uma opção\n1 - Professor\n2 - Aluno\n3 - Ambos\n4 - Sair");
-            System.out.println("Digite sua escolha: ");
-            int escolha = teclado.nextInt();
-            System.out.println("-------------------------------------------------------");
-
+            /** Executa o menu */
+            recebe.Menu();
             /** Define execucao de acordo com a escolha do usuario */
-            switch (escolha) {
+            switch (recebe.escolha) {
                 case 1:
                     RegisterProf();
                     break;
@@ -50,16 +46,7 @@ public class Register {
     public void RegisterProf() {
 
         /** Coleta dados */
-        System.out.println("Olá Prof°, qual o seu nome: ");
-        objProfessor.nome = teclado.next();
-        System.out.println("Sua idade: ");
-        objProfessor.idade = teclado.nextInt();
-        System.out.println("Seu telefone: ");
-        objProfessor.telefone = teclado.nextLong();
-        System.out.println("Sua especialidade: ");
-        objProfessor.especialidade = teclado.next();
-        System.out.println("Sua disciplina: ");
-        objProfessor.disciplina = teclado.next();
+        recebe.ColetaProfessor(objProfessor);
 
         /** Imprime as informacoes */
         outuput.PrintProfessor(objProfessor);
@@ -68,16 +55,7 @@ public class Register {
     public void RegisterAluno() {
 
         /** Coleta dados do aluno */
-        System.out.println("Insira o nome do aluno: ");
-        objAluno.nome = teclado.next();
-        System.out.println("Idade: ");
-        objAluno.idade = teclado.nextInt();
-        System.out.println("Frequencia: ");
-        objAluno.frequencia = teclado.nextInt();
-        System.out.println("Nota 1: ");
-        objAluno.nota1 = teclado.nextFloat();
-        System.out.println("Nota 2: ");
-        objAluno.nota2 = teclado.nextFloat();
+        recebe.ColetaAluno(objAluno);
 
         /** Imprime as informacoes do aluno */
         outuput.PrintAluno(objAluno);

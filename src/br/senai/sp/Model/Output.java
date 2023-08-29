@@ -3,6 +3,8 @@ package br.senai.sp.Model;
 import br.senai.sp.Aluno;
 import br.senai.sp.Professor;
 
+import java.util.Scanner;
+
 public class Output {
 
     /** Imprime as informacoes do professor */
