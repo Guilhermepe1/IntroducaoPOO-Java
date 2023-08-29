@@ -3,8 +3,6 @@ package br.senai.sp;
 import br.senai.sp.Model.Input;
 import br.senai.sp.Model.Output;
 
-import java.util.Scanner;
-
 public class Register {
 
     /** Instancia Professor */
@@ -16,6 +14,7 @@ public class Register {
     /** Instancia Input */
     Input recebe = new Input();
 
+    /** Funcao para registrar Professor e Aluno */
     public void Registra() {
 
         /** Cria variavel para laco de repeticao */
@@ -43,6 +42,7 @@ public class Register {
         }
     }
 
+    /** Executa registro de professor */
     public void RegisterProf() {
 
         /** Coleta dados */
@@ -52,6 +52,7 @@ public class Register {
         outuput.PrintProfessor(objProfessor);
     }
 
+    /** Executa registro de aluno */
     public void RegisterAluno() {
 
         /** Coleta dados do aluno */
