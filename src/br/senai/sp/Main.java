@@ -1,5 +1,7 @@
 package br.senai.sp;
 
+import br.senai.sp.Model.Output;
+
 import java.util.Scanner;
 
 public class Main {

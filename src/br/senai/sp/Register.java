@@ -1,17 +1,19 @@
 package br.senai.sp;
 
+import br.senai.sp.Model.Output;
+
 import java.util.Scanner;
 
 public class Register {
 
     /** Instancia Scanner */
     Scanner teclado = new Scanner(System.in);
-
     /** Instancia Professor */
     Professor objProfessor = new Professor();
-
     /** Instancia Aluno */
     Aluno objAluno = new Aluno();
+    /** Instancia Output */
+    Output outuput = new Output();
 
 
     public void Registra() {
@@ -62,11 +64,7 @@ public class Register {
         objProfessor.disciplina = teclado.next();
 
         /** Imprime as informacoes */
-        System.out.println("-------------------------------------------------------");
-        System.out.println("Bem-vindo Prof° " + objProfessor.nome);
-        System.out.printf("Você tem %d anos. Seu telefone é o %d.", objProfessor.idade, objProfessor.telefone);
-        System.out.printf("\nSua especialidade é %s e você aplica a disciplina de %s", objProfessor.especialidade, objProfessor.disciplina);
-        System.out.println("\n-------------------------------------------------------");
+        outuput.PrintProfessor(objProfessor);
     }
 
     public void RegisterAluno() {
@@ -84,10 +82,6 @@ public class Register {
         objAluno.nota2 = teclado.nextFloat();
 
         /** Imprime as informacoes do aluno */
-        System.out.println("-------------------------------------------------------");
-        System.out.printf("Nome: %s     Idade: %d\nFrequencia: %d\nNota 1: %.1f       Nota 2: %.1f", objAluno.nome, objAluno.idade, objAluno.frequencia, objAluno.nota1, objAluno.nota2);
-        objAluno.media = (objAluno.nota1+ objAluno.nota2)/2;
-        System.out.printf("\nA média dele foi: %.1f", objAluno.media);
-
+        outuput.PrintAluno(objAluno);
     }
 }

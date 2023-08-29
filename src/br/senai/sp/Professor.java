@@ -1,11 +1,11 @@
 package br.senai.sp;
 
 public class Professor {
-    String nome;
-    int idade;
-    long telefone;
-    String especialidade;
-    String disciplina;
+    public String nome;
+    public int idade;
+    public long telefone;
+    public String especialidade;
+    public String disciplina;
 
 
 }
